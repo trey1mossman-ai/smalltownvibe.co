@@ -191,7 +191,7 @@ export default function HomePage() {
       </section>
 
       {/* Featured Businesses */}
-      <section className="py-16 sm:py-20">
+      <section id="featured" className="py-16 sm:py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between mb-8">
             <div>
