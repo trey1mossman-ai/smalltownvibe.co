@@ -32,6 +32,7 @@ export default function BusinessCard({ business, className }: BusinessCardProps)
             height={business.images.thumbnail.height}
             className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
             loading="lazy"
+            decoding="async"
           />
           {business.featured && (
             <span className="absolute top-4 left-4 bg-brand text-white text-xs font-semibold px-3 py-1 rounded-full">

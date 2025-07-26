@@ -17,28 +17,28 @@ export default function HomePage() {
   const categoryData = [
     {
       name: 'Dining',
-      slug: 'dining',
+      slug: 'Dining',
       description: 'Experience Castle Rock\'s diverse culinary scene',
       icon: '🍽️',
       count: businesses.filter(b => b.primaryCategory === 'Dining' || b.categories.includes('Dining')).length,
     },
     {
       name: 'Shopping',
-      slug: 'shopping',
+      slug: 'Shopping',
       description: 'Discover unique shops and boutiques downtown',
       icon: '🛍️',
       count: businesses.filter(b => b.primaryCategory === 'Shopping' || b.categories.includes('Shopping')).length,
     },
     {
       name: 'Services',
-      slug: 'services',
+      slug: 'Services',
       description: 'Find professional services for all your needs',
       icon: '✂️',
       count: businesses.filter(b => b.primaryCategory === 'Services' || b.categories.includes('Services')).length,
     },
     {
       name: 'Attractions',
-      slug: 'attractions',
+      slug: 'Attractions',
       description: 'Explore Castle Rock\'s history and entertainment',
       icon: '🏛️',
       count: businesses.filter(b => b.primaryCategory === 'Attractions' || b.categories.includes('Attractions')).length,
@@ -74,7 +74,48 @@ export default function HomePage() {
             "name": "Small Town Vibes - Castle Rock Local Business Directory",
             "description": "Discover locally owned businesses in Castle Rock, Colorado.",
             "url": "https://smalltownvibes.co",
-            "primaryImageOfPage": imageSchema
+            "primaryImageOfPage": imageSchema,
+            "breadcrumb": {
+              "@type": "BreadcrumbList",
+              "itemListElement": [{
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://smalltownvibes.co"
+              }]
+            },
+            "about": {
+              "@type": "Place",
+              "name": "Castle Rock, Colorado",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Castle Rock",
+                "addressRegion": "CO",
+                "postalCode": "80104",
+                "addressCountry": "US"
+              }
+            }
+          })}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "CollectionPage",
+            "name": "Castle Rock Local Businesses",
+            "description": "Directory of locally owned businesses in Castle Rock, Colorado",
+            "url": "https://smalltownvibes.co",
+            "hasPart": businesses.map(business => ({
+              "@type": business.primaryCategory === 'Museum' ? 'Museum' : 'LocalBusiness',
+              "name": business.name,
+              "url": `https://smalltownvibes.co/business/${business.slug}`,
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": business.address.street,
+                "addressLocality": business.address.city,
+                "addressRegion": business.address.state,
+                "postalCode": business.address.zip
+              }
+            }))
           })}
         </script>
       </Helmet>

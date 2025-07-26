@@ -4,11 +4,13 @@ import HomePage from '@/pages/HomePage';
 import BusinessesPage from '@/pages/BusinessesPage';
 import BusinessDetailPage from '@/pages/BusinessDetailPage';
 import Layout from '@/components/layout/Layout';
+import ScrollToTop from '@/components/common/ScrollToTop';
 
 export default function App() {
   return (
     <HelmetProvider>
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<HomePage />} />

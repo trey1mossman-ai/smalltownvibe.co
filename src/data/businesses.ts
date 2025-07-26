@@ -45,7 +45,7 @@ export const businesses: Business[] = [
     id: 'goldie-links',
     name: 'Goldie Links',
     slug: 'goldie-links',
-    description: 'Permanent jewelry and custom gold chains for a personalized style statement',
+    description: 'Permanent jewelry, custom gold chains, and private party experiences for your special celebrations',
     address: {
       street: '400 3rd Street (Inside The Barn)',
       city: 'Castle Rock',
@@ -80,7 +80,7 @@ export const businesses: Business[] = [
     status: 'approved',
     lastModified: '2025-07-21',
     featured: true,
-    specialNotes: 'Located inside The Barn marketplace',
+    specialNotes: 'Located inside The Barn marketplace. Book private parties for bachelorette parties, birthdays, and special events!',
   },
   {
     id: 'dapper-barbershop',
@@ -119,7 +119,7 @@ export const businesses: Business[] = [
     },
     status: 'approved',
     lastModified: '2025-07-21',
-    featured: false,
+    featured: true,
   },
   {
     id: 'life-at-home',
@@ -156,7 +156,7 @@ export const businesses: Business[] = [
     },
     status: 'approved',
     lastModified: '2025-07-21',
-    featured: false,
+    featured: true,
     specialNotes: 'Women-owned by Heidi. White barn building in alley behind Olinger\'s Funeral Home',
   },
   {

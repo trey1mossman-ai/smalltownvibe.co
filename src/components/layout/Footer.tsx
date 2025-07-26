@@ -31,18 +31,23 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link to="/businesses?category=dining" className="text-muted-foreground hover:text-brand transition-colors">
+                <Link to="/businesses?category=Dining" className="text-muted-foreground hover:text-brand transition-colors">
                   Restaurants & Dining
                 </Link>
               </li>
               <li>
-                <Link to="/businesses?category=shopping" className="text-muted-foreground hover:text-brand transition-colors">
+                <Link to="/businesses?category=Shopping" className="text-muted-foreground hover:text-brand transition-colors">
                   Shopping & Retail
                 </Link>
               </li>
               <li>
-                <Link to="/businesses?category=services" className="text-muted-foreground hover:text-brand transition-colors">
+                <Link to="/businesses?category=Services" className="text-muted-foreground hover:text-brand transition-colors">
                   Services
+                </Link>
+              </li>
+              <li>
+                <Link to="/businesses?category=Attractions" className="text-muted-foreground hover:text-brand transition-colors">
+                  Attractions
                 </Link>
               </li>
             </ul>

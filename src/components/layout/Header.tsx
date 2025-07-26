@@ -12,10 +12,10 @@ export default function Header() {
   ];
 
   const categories = [
-    { to: '/businesses?category=dining', label: 'Dine' },
-    { to: '/businesses?category=shopping', label: 'Shop' },
-    { to: '/businesses?category=services', label: 'Services' },
-    { to: '/businesses?category=attractions', label: 'Explore' },
+    { to: '/businesses?category=Dining', label: 'Dine' },
+    { to: '/businesses?category=Shopping', label: 'Shop' },
+    { to: '/businesses?category=Services', label: 'Services' },
+    { to: '/businesses?category=Attractions', label: 'Explore' },
   ];
 
   return (

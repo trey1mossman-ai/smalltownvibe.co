@@ -200,7 +200,7 @@ export default function BusinessDetailPage() {
                       className="flex items-center gap-3 text-muted-foreground hover:text-brand transition-colors"
                     >
                       <Calendar size={20} />
-                      <span>Book Online</span>
+                      <span>{business.slug === 'goldie-links' ? 'Book Private Party' : 'Book Online'}</span>
                     </a>
                   )}
                 </div>
@@ -251,9 +251,18 @@ export default function BusinessDetailPage() {
                     </div>
                   </div>
                   
-                  {/* Map placeholder - in production, integrate with Google Maps */}
-                  <div className="h-48 bg-muted rounded-md flex items-center justify-center">
-                    <span className="text-muted-foreground text-sm">Map View</span>
+                  {/* Embedded Google Map */}
+                  <div className="h-64 rounded-md overflow-hidden">
+                    <iframe
+                      src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=${encodeURIComponent(business.name + ' ' + business.address.street + ' ' + business.address.city + ' ' + business.address.state)}&zoom=16`}
+                      width="100%"
+                      height="100%"
+                      style={{ border: 0 }}
+                      allowFullScreen
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                      title={`Map showing location of ${business.name}`}
+                    />
                   </div>
 
                   <a
