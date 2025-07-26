@@ -20,6 +20,17 @@ export default function BusinessCard({ business, className }: BusinessCardProps)
     const currentTime = `${now.getHours().toString().padStart(2, '0')}:${now.getMinutes().toString().padStart(2, '0')}`;
     return currentTime >= todayHours.open && currentTime < todayHours.close;
   };
+  
+  const isClosingSoon = () => {
+    if (!todayHours || !isOpen()) return false;
+    const now = new Date();
+    const [closeHour, closeMinute] = todayHours.close.split(':').map(Number);
+    const closeTime = new Date();
+    closeTime.setHours(closeHour, closeMinute, 0);
+    const timeDiff = closeTime.getTime() - now.getTime();
+    const minutesUntilClose = Math.floor(timeDiff / 60000);
+    return minutesUntilClose <= 60 && minutesUntilClose > 0;
+  };
 
   return (
     <article className={clsx('card group hover:shadow-lg transition-all', className)}>
@@ -43,9 +54,13 @@ export default function BusinessCard({ business, className }: BusinessCardProps)
           {todayHours && (
             <span className={clsx(
               'absolute top-4 right-4 text-xs font-semibold px-3 py-1 rounded-full',
-              isOpen() ? 'bg-success text-white' : 'bg-error text-white'
+              isClosingSoon() 
+                ? 'bg-warning text-black animate-pulse' 
+                : isOpen() 
+                  ? 'bg-success text-white' 
+                  : 'bg-error text-white'
             )}>
-              {isOpen() ? 'Open Now' : 'Closed'}
+              {isClosingSoon() ? 'Closing Soon' : isOpen() ? 'Open Now' : 'Closed'}
             </span>
           )}
         </div>
@@ -90,29 +105,37 @@ export default function BusinessCard({ business, className }: BusinessCardProps)
               </div>
             )}
             
-            <div className="flex items-center gap-2 text-muted-foreground">
+            <a href={`tel:${business.phone.e164}`} className="flex items-center gap-2 text-muted-foreground hover:text-brand transition-colors">
               <Phone size={16} className="flex-shrink-0" />
               <span>{business.phone.display}</span>
-            </div>
+            </a>
           </div>
         </div>
       </Link>
 
       {/* Quick Actions */}
-      {business.links.website && (
-        <div className="mt-4 pt-4 border-t border-border">
+      <div className="mt-4 pt-4 border-t border-border space-y-2">
+        <a
+          href={`tel:${business.phone.e164}`}
+          className="w-full bg-brand text-white py-2 px-4 rounded-md text-center font-medium hover:bg-brand-dark transition-colors flex items-center justify-center gap-2"
+          onClick={(e) => e.stopPropagation()}
+        >
+          <Phone size={16} />
+          Call Now
+        </a>
+        {business.links.website && (
           <a
             href={business.links.website}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 text-sm text-brand hover:text-brand-dark transition-colors"
+            className="w-full bg-muted text-foreground py-2 px-4 rounded-md text-center text-sm hover:bg-muted/80 transition-colors flex items-center justify-center gap-2"
             onClick={(e) => e.stopPropagation()}
           >
             Visit Website
             <ExternalLink size={14} />
           </a>
-        </div>
-      )}
+        )}
+      </div>
     </article>
   );
 }

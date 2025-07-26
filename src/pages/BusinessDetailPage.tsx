@@ -69,6 +69,40 @@ export default function BusinessDetailPage() {
       </Helmet>
 
       <div className="min-h-screen bg-background">
+        {/* Sticky CTA Bar - Mobile Only */}
+        <div className="fixed bottom-0 left-0 right-0 z-40 bg-background border-t border-border p-4 sm:hidden">
+          <div className="flex gap-2">
+            <a
+              href={`tel:${business.phone.e164}`}
+              className="flex-1 bg-brand text-white py-3 px-4 rounded-md text-center font-medium hover:bg-brand-dark transition-colors flex items-center justify-center gap-2"
+            >
+              <Phone size={18} />
+              Call Now
+            </a>
+            {business.links.booking ? (
+              <a
+                href={business.links.booking}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 bg-success text-white py-3 px-4 rounded-md text-center font-medium hover:bg-success/90 transition-colors flex items-center justify-center gap-2"
+              >
+                <Calendar size={18} />
+                {business.slug === 'goldie-links' ? 'Book Party' : 'Book Now'}
+              </a>
+            ) : business.links.website && (
+              <a
+                href={business.links.website}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 bg-muted text-foreground py-3 px-4 rounded-md text-center font-medium hover:bg-muted/80 transition-colors flex items-center justify-center gap-2"
+              >
+                <Globe size={18} />
+                Visit Site
+              </a>
+            )}
+          </div>
+        </div>
+
         {/* Hero Image */}
         <div className="relative h-64 sm:h-96 overflow-hidden">
           <img 
@@ -96,7 +130,7 @@ export default function BusinessDetailPage() {
         </div>
 
         {/* Main Content */}
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 pb-24 sm:pb-8">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {/* Left Column - Main Info */}
             <div className="lg:col-span-2 space-y-8">
@@ -201,6 +235,28 @@ export default function BusinessDetailPage() {
                     >
                       <Calendar size={20} />
                       <span>{business.slug === 'goldie-links' ? 'Book Private Party' : 'Book Online'}</span>
+                    </a>
+                  )}
+                </div>
+
+                {/* Primary CTAs - Desktop */}
+                <div className="hidden sm:flex flex-col gap-2 mt-6 pt-6 border-t border-border">
+                  <a
+                    href={`tel:${business.phone.e164}`}
+                    className="w-full bg-brand text-white py-3 px-4 rounded-md text-center font-medium hover:bg-brand-dark transition-colors flex items-center justify-center gap-2"
+                  >
+                    <Phone size={18} />
+                    Call Now
+                  </a>
+                  {business.links.booking && (
+                    <a
+                      href={business.links.booking}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full bg-success text-white py-3 px-4 rounded-md text-center font-medium hover:bg-success/90 transition-colors flex items-center justify-center gap-2"
+                    >
+                      <Calendar size={18} />
+                      {business.slug === 'goldie-links' ? 'Book Private Party' : 'Book Now'}
                     </a>
                   )}
                 </div>

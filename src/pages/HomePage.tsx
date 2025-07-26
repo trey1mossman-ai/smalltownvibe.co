@@ -149,15 +149,16 @@ export default function HomePage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link 
                 to="/businesses" 
-                className="bg-brand hover:bg-brand-dark text-white px-8 py-3 rounded-md text-lg font-semibold transition-colors shadow-lg"
+                className="bg-success hover:bg-success/90 text-white px-8 py-4 rounded-md text-lg font-semibold transition-colors shadow-lg flex items-center justify-center gap-3 animate-pulse"
               >
-                Browse All Businesses
+                <div className="w-3 h-3 bg-white rounded-full" />
+                See Who's Open Now
               </Link>
               <a 
-                href="#categories" 
-                className="bg-white/90 hover:bg-white text-brand px-8 py-3 rounded-md text-lg font-semibold transition-colors shadow-lg"
+                href="#featured" 
+                className="bg-white/90 hover:bg-white text-brand px-8 py-4 rounded-md text-lg font-semibold transition-colors shadow-lg"
               >
-                Explore Categories
+                View Today's Featured
               </a>
             </div>
             </div>

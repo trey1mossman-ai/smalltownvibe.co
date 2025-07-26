@@ -13,11 +13,29 @@ export default function BusinessesPage() {
   const [selectedCategory, setSelectedCategory] = useState<string>(categoryParam || 'all');
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
   const [showFilters, setShowFilters] = useState(false);
+  const [showOpenOnly, setShowOpenOnly] = useState(false);
+
+  // Check if business is currently open
+  const isBusinessOpen = (business: typeof businesses[0]) => {
+    const now = new Date();
+    const today = now.toLocaleDateString('en-US', { weekday: 'long' }).toLowerCase();
+    const todayHours = business.hours[today];
+    
+    if (!todayHours) return false;
+    
+    const currentTime = `${now.getHours().toString().padStart(2, '0')}:${now.getMinutes().toString().padStart(2, '0')}`;
+    return currentTime >= todayHours.open && currentTime < todayHours.close;
+  };
 
   // Get filtered businesses
-  const filteredBusinesses = selectedCategory === 'all' 
+  let filteredBusinesses = selectedCategory === 'all' 
     ? businesses 
     : getBusinessesByCategory(selectedCategory);
+    
+  // Apply open now filter
+  if (showOpenOnly) {
+    filteredBusinesses = filteredBusinesses.filter(isBusinessOpen);
+  }
 
   // Update URL when category changes
   useEffect(() => {
@@ -71,6 +89,20 @@ export default function BusinessesPage() {
               >
                 <Filter size={18} />
                 Filters
+              </button>
+
+              {/* Open Now Toggle */}
+              <button
+                onClick={() => setShowOpenOnly(!showOpenOnly)}
+                className={clsx(
+                  'flex items-center gap-2 px-4 py-2 rounded-md text-sm font-medium transition-colors',
+                  showOpenOnly
+                    ? 'bg-success text-white'
+                    : 'bg-muted hover:bg-muted/80'
+                )}
+              >
+                <div className={clsx('w-2 h-2 rounded-full', showOpenOnly ? 'bg-white' : 'bg-success')} />
+                Open Now
               </button>
 
               {/* Desktop Category Filters */}
@@ -130,6 +162,21 @@ export default function BusinessesPage() {
             {/* Mobile Filters */}
             {showFilters && (
               <div className="sm:hidden mt-4 pb-4 border-t border-border pt-4">
+                <button
+                  onClick={() => {
+                    setShowOpenOnly(!showOpenOnly);
+                    setShowFilters(false);
+                  }}
+                  className={clsx(
+                    'px-4 py-2 rounded-md text-sm font-medium transition-colors mb-2 w-full flex items-center justify-center gap-2',
+                    showOpenOnly
+                      ? 'bg-success text-white'
+                      : 'bg-muted hover:bg-muted/80'
+                  )}
+                >
+                  <div className={clsx('w-2 h-2 rounded-full', showOpenOnly ? 'bg-white' : 'bg-success')} />
+                  Open Now Only
+                </button>
                 <div className="flex flex-wrap gap-2">
                   <button
                     onClick={() => {
