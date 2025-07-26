@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { MapPin, Clock, Phone, ExternalLink } from 'lucide-react';
 import type { Business } from '@/types/business';
 import clsx from 'clsx';
+import { formatTime } from '@/utils/formatTime';
 
 interface BusinessCardProps {
   business: Business;
@@ -84,7 +85,7 @@ export default function BusinessCard({ business, className }: BusinessCardProps)
               <div className="flex items-center gap-2 text-muted-foreground">
                 <Clock size={16} className="flex-shrink-0" />
                 <span>
-                  Today: {todayHours.open} - {todayHours.close}
+                  Today: {formatTime(todayHours.open)} - {formatTime(todayHours.close)}
                 </span>
               </div>
             )}
