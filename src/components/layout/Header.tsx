@@ -23,8 +23,9 @@ export default function Header() {
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
-            <span className="text-2xl font-bold text-brand">Small Town Vibes</span>
+          <Link to="/" className="flex flex-col items-start">
+            <span className="text-2xl font-bold text-brand leading-tight">Small Town Vibes</span>
+            <span className="text-xs text-muted-foreground -mt-1">Exit 182</span>
           </Link>
 
           {/* Desktop Navigation */}

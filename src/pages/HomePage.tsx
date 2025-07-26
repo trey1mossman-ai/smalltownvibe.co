@@ -138,15 +138,15 @@ export default function HomePage() {
         <div className="relative h-full flex items-center justify-center">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto text-white">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6 animate-slideInUp">
               Discover Castle Rock's
-              <span className="text-accent block mt-2">Local Businesses</span>
+              <span className="text-accent block mt-2 animate-slideInUp animation-delay-200">Local Businesses</span>
             </h1>
-            <p className="text-lg sm:text-xl text-gray-200 mb-8">
+            <p className="text-lg sm:text-xl text-gray-200 mb-8 animate-slideInUp animation-delay-400">
               Shop local, dine downtown, and explore everything Castle Rock has to offer. 
               Support our community's unique shops, restaurants, and services.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center animate-slideInUp animation-delay-600">
               <Link 
                 to="/businesses" 
                 className="bg-success hover:bg-success/90 text-white px-8 py-4 rounded-md text-lg font-semibold transition-colors shadow-lg flex items-center justify-center gap-3 animate-pulse"
