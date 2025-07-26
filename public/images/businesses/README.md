@@ -1,29 +1,27 @@
-# Business Images Directory
+# Business Images README
 
-This directory contains WebP images for each business.
+Place your converted WebP images in each business directory:
 
-## Image Placement Guide:
+## dream-dinners/
+- `meal-packages.webp` - Image 9 (Dream Dinners meal prep packages)
 
-### Dream Dinners (`/dream-dinners/`)
-- `meal-prep-packages.webp` - Image 9: Meal prep packages
+## goldie-links/
+- `jewelry-artist.webp` - Image 8 (Goldie Links jewelry artist with permanent jewelry)
 
-### Goldie Links (`/goldie-links/`)
-- `permanent-jewelry-artist.webp` - Image 8: Woman with gold chains
+## dapper-barbershop/
+- `interior-barber.webp` - Image 6 (Barber providing haircut service)
 
-### Dapper Barbershop (`/dapper-barbershop/`)
-- `barber-at-work.webp` - Image 6: Barber working on client
+## life-at-home/
+- `butterfly-decor.webp` - Image 4 (Butterfly home decor items)
 
-### Life At Home (`/life-at-home/`)
-- `butterfly-home-decor.webp` - Image 4: Butterfly decorations
+## pegasus-restaurant/
+- `dining-room.webp` - Image 7 (Restaurant interior with brick fireplace)
 
-### Pegasus Restaurant (`/pegasus-restaurant/`)
-- `interior-dining-fireplace.webp` - Image 7: Restaurant interior with fireplace
+## castle-rock-museum/
+- `museum-artwork.webp` - Image 5 (Watercolor painting of museum building)
 
-### Castle Rock Museum (`/castle-rock-museum/`)
-- `museum-watercolor-art.webp` - Image 5: Watercolor painting of museum
-
-## Image Requirements:
+All images should be:
 - Format: WebP
-- Thumbnail: 400x300
-- Hero: 1600x900
-- All images should have proper metadata for SEO
+- Dimensions: 1600x900 (we'll handle thumbnail generation automatically)
+- Quality: 80-85%
+- File size: < 120KB each

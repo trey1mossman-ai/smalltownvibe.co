@@ -12,7 +12,6 @@ import {
 } from 'lucide-react';
 import { getBusinessBySlug } from '@/data/businesses';
 import BusinessHours from '@/components/business/BusinessHours';
-import { getImageWithFallback } from '@/utils/imageFallback';
 
 export default function BusinessDetailPage() {
   const { slug } = useParams<{ slug: string }>();
@@ -44,7 +43,7 @@ export default function BusinessDetailPage() {
       "latitude": business.address.latitude,
       "longitude": business.address.longitude
     },
-    "image": getImageWithFallback(business.images.hero.src, business.primaryCategory.toLowerCase()),
+    "image": business.images.hero.src,
     ...(business.priceRange && { "priceRange": business.priceRange })
   };
 
@@ -62,7 +61,7 @@ export default function BusinessDetailPage() {
         />
         <meta property="og:title" content={`${business.name} - Castle Rock Local Business`} />
         <meta property="og:description" content={business.description} />
-        <meta property="og:image" content={getImageWithFallback(business.images.hero.src, business.primaryCategory.toLowerCase())} />
+        <meta property="og:image" content={business.images.hero.src} />
         <link rel="canonical" href={`https://smalltownvibes.co/business/${business.slug}`} />
         <script type="application/ld+json">
           {JSON.stringify(structuredData)}
@@ -73,7 +72,7 @@ export default function BusinessDetailPage() {
         {/* Hero Image */}
         <div className="relative h-64 sm:h-96 overflow-hidden">
           <img 
-            src={getImageWithFallback(business.images.hero.src, business.primaryCategory.toLowerCase())} 
+            src={business.images.hero.src} 
             alt={business.images.hero.alt}
             className="w-full h-full object-cover"
           />

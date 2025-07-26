@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom';
 import { MapPin, Clock, Phone, ExternalLink } from 'lucide-react';
 import type { Business } from '@/types/business';
 import clsx from 'clsx';
-import { getImageWithFallback } from '@/utils/imageFallback';
 
 interface BusinessCardProps {
   business: Business;
@@ -27,7 +26,7 @@ export default function BusinessCard({ business, className }: BusinessCardProps)
         {/* Image */}
         <div className="relative -m-6 mb-4 overflow-hidden rounded-t-lg">
           <img 
-            src={getImageWithFallback(business.images.thumbnail.src, business.primaryCategory.toLowerCase())} 
+            src={business.images.thumbnail.src} 
             alt={business.images.thumbnail.alt}
             width={business.images.thumbnail.width}
             height={business.images.thumbnail.height}

@@ -1,4 +1,5 @@
 import type { Business } from '@/types/business';
+import { businessImages } from './business-images';
 
 export const businesses: Business[] = [
   {
@@ -29,20 +30,7 @@ export const businesses: Business[] = [
       saturday: { open: '10:00', close: '13:00' },
       sunday: null,
     },
-    images: {
-      thumbnail: {
-        src: '/images/businesses/dream-dinners/meal-prep-packages.webp',
-        alt: 'Dream Dinners meal prep packages ready for Castle Rock families',
-        width: 400,
-        height: 300,
-      },
-      hero: {
-        src: '/images/businesses/dream-dinners/meal-prep-packages.webp',
-        alt: 'Dream Dinners homemade meal prep kits with fresh ingredients in Castle Rock',
-        width: 1600,
-        height: 900,
-      },
-    },
+    images: businessImages['dream-dinners'],
     links: {
       website: 'https://www.castlerockmealprep.com',
       facebook: 'https://www.facebook.com/DreamDinnersCastleRockCo/',
@@ -81,20 +69,7 @@ export const businesses: Business[] = [
       saturday: { open: '10:00', close: '18:00' },
       sunday: { open: '10:00', close: '18:00' },
     },
-    images: {
-      thumbnail: {
-        src: '/images/businesses/goldie-links/permanent-jewelry-artist.webp',
-        alt: 'Goldie Links permanent jewelry artist showcasing gold chains in Castle Rock',
-        width: 400,
-        height: 300,
-      },
-      hero: {
-        src: '/images/businesses/goldie-links/permanent-jewelry-artist.webp',
-        alt: 'Goldie Links custom permanent jewelry experience at The Barn Castle Rock',
-        width: 1600,
-        height: 900,
-      },
-    },
+    images: businessImages['goldie-links'],
     links: {
       website: 'https://goldie-links.com',
       instagram: 'https://www.instagram.com/goldielinksjewelry',
@@ -135,20 +110,7 @@ export const businesses: Business[] = [
       saturday: { open: '09:00', close: '19:00' },
       sunday: null,
     },
-    images: {
-      thumbnail: {
-        src: '/images/businesses/dapper-barbershop/barber-at-work.webp',
-        alt: 'Dapper Barbershop professional barber providing quality cuts in Castle Rock',
-        width: 400,
-        height: 300,
-      },
-      hero: {
-        src: '/images/businesses/dapper-barbershop/barber-at-work.webp',
-        alt: 'Dapper Barbershop Castle Rock expert grooming services in action',
-        width: 1600,
-        height: 900,
-      },
-    },
+    images: businessImages['dapper-barbershop'],
     links: {
       website: 'https://www.dapperbarbershopco.com',
       booking: 'https://getsquire.com/discover/barbershop/dapper-barbershop-castle-rock-castle-rock-1',
@@ -187,20 +149,7 @@ export const businesses: Business[] = [
       saturday: { open: '11:00', close: '16:00' },
       sunday: { open: '11:00', close: '15:00' },
     },
-    images: {
-      thumbnail: {
-        src: '/images/businesses/life-at-home/butterfly-home-decor.webp',
-        alt: 'Life At Home unique butterfly decor and gifts in Castle Rock',
-        width: 400,
-        height: 300,
-      },
-      hero: {
-        src: '/images/businesses/life-at-home/butterfly-home-decor.webp',
-        alt: 'Life At Home curated gifts and home decor boutique Castle Rock Colorado',
-        width: 1600,
-        height: 900,
-      },
-    },
+    images: businessImages['life-at-home'],
     links: {
       website: 'https://www.lifeatyourhome.com',
       facebook: 'https://www.facebook.com/LifeAtYourHomeDecor/',
@@ -238,20 +187,7 @@ export const businesses: Business[] = [
       saturday: { open: '07:30', close: '14:00' },
       sunday: { open: '07:30', close: '14:00' },
     },
-    images: {
-      thumbnail: {
-        src: '/images/businesses/pegasus-restaurant/interior-dining-fireplace.webp',
-        alt: 'Pegasus Restaurant cozy interior dining with brick fireplace Castle Rock',
-        width: 400,
-        height: 300,
-      },
-      hero: {
-        src: '/images/businesses/pegasus-restaurant/interior-dining-fireplace.webp',
-        alt: 'Pegasus Restaurant Greek Mexican American fusion dining Castle Rock Colorado',
-        width: 1600,
-        height: 900,
-      },
-    },
+    images: businessImages['pegasus-restaurant'],
     links: {
       website: 'https://pegasusrestaurantcastlerock.com',
     },
@@ -289,20 +225,7 @@ export const businesses: Business[] = [
       saturday: { open: '11:00', close: '16:00' },
       sunday: null,
     },
-    images: {
-      thumbnail: {
-        src: '/images/businesses/castle-rock-museum/museum-watercolor-art.webp',
-        alt: 'Castle Rock Museum historic 1875 train depot watercolor artwork',
-        width: 400,
-        height: 300,
-      },
-      hero: {
-        src: '/images/businesses/castle-rock-museum/museum-watercolor-art.webp',
-        alt: 'Castle Rock Museum Colorado history railroad heritage depot building',
-        width: 1600,
-        height: 900,
-      },
-    },
+    images: businessImages['castle-rock-museum'],
     links: {
       website: 'https://castlerockmuseum.org',
       facebook: 'https://facebook.com/CRHistoricalSociety',

@@ -13,8 +13,8 @@ export interface HeroImage {
 
 // WebP images are now available!
 const imageExists = (path: string): string => {
-  // Using placeholder images until actual WebP images are added
-  const useWebP = false;
+  // Using actual WebP images now
+  const useWebP = true;
   return useWebP ? path : 'https://images.unsplash.com/photo-1602085674869-7d5df48d7c83?w=1920&h=1080&fit=crop&q=80';
 };
 
