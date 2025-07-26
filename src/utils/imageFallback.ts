@@ -1,6 +1,6 @@
 // Utility to handle missing images with fallbacks
 
-export const getImageWithFallback = (imagePath: string, category: string = 'general'): string => {
+export const getImageWithFallback = (imagePath: string, _category: string = 'general'): string => {
   // Map categories to appropriate placeholder images
   const placeholders: Record<string, string> = {
     dining: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&h=600&fit=crop&q=80',

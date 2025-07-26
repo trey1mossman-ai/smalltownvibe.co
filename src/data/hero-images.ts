@@ -61,7 +61,7 @@ export const heroImages = {
 };
 
 // Schema.org ImageObject generator for SEO
-export const generateImageSchema = (image: HeroImage, url: string) => {
+export const generateImageSchema = (image: HeroImage, _url: string) => {
   return {
     "@type": "ImageObject",
     "url": `https://smalltownvibes.co${image.src}`,
