@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { MapPin, Clock, Phone, ExternalLink } from 'lucide-react';
+import { MapPin, Clock, Phone, ExternalLink, Calendar } from 'lucide-react';
 import type { Business } from '@/types/business';
 import clsx from 'clsx';
 import { formatTime } from '@/utils/formatTime';
@@ -115,25 +115,50 @@ export default function BusinessCard({ business, className }: BusinessCardProps)
 
       {/* Quick Actions */}
       <div className="mt-4 pt-4 border-t border-border space-y-2">
-        <a
-          href={`tel:${business.phone.e164}`}
-          className="w-full bg-brand text-white py-2 px-4 rounded-md text-center font-medium hover:bg-brand-dark transition-colors flex items-center justify-center gap-2"
-          onClick={(e) => e.stopPropagation()}
-        >
-          <Phone size={16} />
-          Call Now
-        </a>
-        {business.links.website && (
-          <a
-            href={business.links.website}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-full bg-muted text-foreground py-2 px-4 rounded-md text-center text-sm hover:bg-muted/80 transition-colors flex items-center justify-center gap-2"
-            onClick={(e) => e.stopPropagation()}
-          >
-            Visit Website
-            <ExternalLink size={14} />
-          </a>
+        {business.links.booking ? (
+          <>
+            <a
+              href={business.links.booking}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full bg-success text-white py-3 px-4 rounded-md text-center font-medium hover:bg-success/90 transition-colors flex items-center justify-center gap-2 shadow-md"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <Calendar size={18} />
+              {business.slug === 'dapper-barbershop' ? 'Book Appointment' : business.slug === 'goldie-links' ? 'Book Private Party' : 'Book Now'}
+            </a>
+            <a
+              href={`tel:${business.phone.e164}`}
+              className="w-full bg-muted text-foreground py-2 px-4 rounded-md text-center text-sm hover:bg-muted/80 transition-colors flex items-center justify-center gap-2"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <Phone size={14} />
+              Call
+            </a>
+          </>
+        ) : (
+          <>
+            <a
+              href={`tel:${business.phone.e164}`}
+              className="w-full bg-brand text-white py-2 px-4 rounded-md text-center font-medium hover:bg-brand-dark transition-colors flex items-center justify-center gap-2"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <Phone size={16} />
+              Call Now
+            </a>
+            {business.links.website && (
+              <a
+                href={business.links.website}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full bg-muted text-foreground py-2 px-4 rounded-md text-center text-sm hover:bg-muted/80 transition-colors flex items-center justify-center gap-2"
+                onClick={(e) => e.stopPropagation()}
+              >
+                Visit Website
+                <ExternalLink size={14} />
+              </a>
+            )}
+          </>
         )}
       </div>
     </article>
