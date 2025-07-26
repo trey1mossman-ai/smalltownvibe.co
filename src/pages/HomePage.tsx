@@ -4,9 +4,15 @@ import { ChevronRight } from 'lucide-react';
 import { businesses, getFeaturedBusinesses, categories } from '@/data/businesses';
 import BusinessCard from '@/components/business/BusinessCard';
 import CategoryCard from '@/components/home/CategoryCard';
+import HeroImageComponent from '@/components/common/HeroImage';
+import { heroImages, generateImageSchema } from '@/data/hero-images';
 
 export default function HomePage() {
   const featuredBusinesses = getFeaturedBusinesses();
+  
+  // Use the aerial view for homepage hero
+  const heroImage = heroImages.homepageHero;
+  const imageSchema = generateImageSchema(heroImage, '/');
   
   const categoryData = [
     {
@@ -55,17 +61,33 @@ export default function HomePage() {
         <meta property="og:description" content="Your guide to locally owned businesses in Castle Rock, CO. Support local dining, shopping, and services." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://smalltownvibes.co" />
+        <meta property="og:image" content={`https://smalltownvibes.co${heroImage.src}`} />
+        <meta property="og:image:width" content={String(heroImage.width)} />
+        <meta property="og:image:height" content={String(heroImage.height)} />
+        <meta property="og:image:alt" content={heroImage.alt} />
         <link rel="canonical" href="https://smalltownvibes.co" />
+        <link rel="preload" as="image" href={heroImage.webpSrc} type="image/webp" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": "Small Town Vibes - Castle Rock Local Business Directory",
+            "description": "Discover locally owned businesses in Castle Rock, Colorado.",
+            "url": "https://smalltownvibes.co",
+            "primaryImageOfPage": imageSchema
+          })}
+        </script>
       </Helmet>
 
       {/* Hero Section with Castle Rock Image */}
       <section className="relative h-[600px] sm:h-[700px] lg:h-[800px] overflow-hidden">
         {/* Hero Background Image */}
         <div className="absolute inset-0">
-          <img 
-            src="https://images.unsplash.com/photo-1602085674869-7d5df48d7c83?w=1920&h=1080&fit=crop&q=80"
-            alt="Castle Rock formation overlooking the town of Castle Rock, Colorado"
-            className="w-full h-full object-cover"
+          <HeroImageComponent 
+            image={heroImage}
+            className="w-full h-full"
+            priority={true}
+            loading="eager"
           />
           {/* Gradient Overlay */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent" />

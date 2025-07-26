@@ -31,14 +31,14 @@ export const businesses: Business[] = [
     },
     images: {
       thumbnail: {
-        src: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&h=300&fit=crop',
-        alt: 'Dream Dinners storefront',
+        src: '/images/businesses/dream-dinners/meal-prep-packages.webp',
+        alt: 'Dream Dinners meal prep packages ready for Castle Rock families',
         width: 400,
         height: 300,
       },
       hero: {
-        src: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1600&h=900&fit=crop',
-        alt: 'Inside Dream Dinners Castle Rock',
+        src: '/images/businesses/dream-dinners/meal-prep-packages.webp',
+        alt: 'Dream Dinners homemade meal prep kits with fresh ingredients in Castle Rock',
         width: 1600,
         height: 900,
       },
@@ -83,14 +83,14 @@ export const businesses: Business[] = [
     },
     images: {
       thumbnail: {
-        src: 'https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=400&h=300&fit=crop',
-        alt: 'Goldie Links jewelry display',
+        src: '/images/businesses/goldie-links/permanent-jewelry-artist.webp',
+        alt: 'Goldie Links permanent jewelry artist showcasing gold chains in Castle Rock',
         width: 400,
         height: 300,
       },
       hero: {
-        src: 'https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=1600&h=900&fit=crop',
-        alt: 'Goldie Links permanent jewelry station',
+        src: '/images/businesses/goldie-links/permanent-jewelry-artist.webp',
+        alt: 'Goldie Links custom permanent jewelry experience at The Barn Castle Rock',
         width: 1600,
         height: 900,
       },
@@ -137,14 +137,14 @@ export const businesses: Business[] = [
     },
     images: {
       thumbnail: {
-        src: 'https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=400&h=300&fit=crop',
-        alt: 'Dapper Barbershop interior',
+        src: '/images/businesses/dapper-barbershop/barber-at-work.webp',
+        alt: 'Dapper Barbershop professional barber providing quality cuts in Castle Rock',
         width: 400,
         height: 300,
       },
       hero: {
-        src: 'https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=1600&h=900&fit=crop',
-        alt: 'Dapper Barbershop classic barber chairs',
+        src: '/images/businesses/dapper-barbershop/barber-at-work.webp',
+        alt: 'Dapper Barbershop Castle Rock expert grooming services in action',
         width: 1600,
         height: 900,
       },
@@ -189,14 +189,14 @@ export const businesses: Business[] = [
     },
     images: {
       thumbnail: {
-        src: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&h=300&fit=crop',
-        alt: 'Life At Home store display',
+        src: '/images/businesses/life-at-home/butterfly-home-decor.webp',
+        alt: 'Life At Home unique butterfly decor and gifts in Castle Rock',
         width: 400,
         height: 300,
       },
       hero: {
-        src: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=1600&h=900&fit=crop',
-        alt: 'Life At Home curated home decor collection',
+        src: '/images/businesses/life-at-home/butterfly-home-decor.webp',
+        alt: 'Life At Home curated gifts and home decor boutique Castle Rock Colorado',
         width: 1600,
         height: 900,
       },
@@ -240,14 +240,14 @@ export const businesses: Business[] = [
     },
     images: {
       thumbnail: {
-        src: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=400&h=300&fit=crop',
-        alt: 'Pegasus Restaurant exterior',
+        src: '/images/businesses/pegasus-restaurant/interior-dining-fireplace.webp',
+        alt: 'Pegasus Restaurant cozy interior dining with brick fireplace Castle Rock',
         width: 400,
         height: 300,
       },
       hero: {
-        src: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1600&h=900&fit=crop',
-        alt: 'Pegasus Restaurant dining room with fireplace',
+        src: '/images/businesses/pegasus-restaurant/interior-dining-fireplace.webp',
+        alt: 'Pegasus Restaurant Greek Mexican American fusion dining Castle Rock Colorado',
         width: 1600,
         height: 900,
       },
@@ -291,14 +291,14 @@ export const businesses: Business[] = [
     },
     images: {
       thumbnail: {
-        src: 'https://images.unsplash.com/photo-1566308350734-af54bc36dc81?w=400&h=300&fit=crop',
-        alt: 'Castle Rock Museum historic train depot',
+        src: '/images/businesses/castle-rock-museum/museum-watercolor-art.webp',
+        alt: 'Castle Rock Museum historic 1875 train depot watercolor artwork',
         width: 400,
         height: 300,
       },
       hero: {
-        src: 'https://images.unsplash.com/photo-1566308350734-af54bc36dc81?w=1600&h=900&fit=crop',
-        alt: 'Castle Rock Museum 1875 depot building',
+        src: '/images/businesses/castle-rock-museum/museum-watercolor-art.webp',
+        alt: 'Castle Rock Museum Colorado history railroad heritage depot building',
         width: 1600,
         height: 900,
       },
