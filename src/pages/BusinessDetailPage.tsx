@@ -308,7 +308,7 @@ export default function BusinessDetailPage() {
                   </div>
                   
                   {/* Embedded Google Map */}
-                  <div className="h-64 rounded-md overflow-hidden">
+                  <div className="h-64 rounded-md overflow-hidden bg-muted">
                     <iframe
                       src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=${encodeURIComponent(business.name + ' ' + business.address.street + ' ' + business.address.city + ' ' + business.address.state)}&zoom=16`}
                       width="100%"
@@ -318,6 +318,7 @@ export default function BusinessDetailPage() {
                       loading="lazy"
                       referrerPolicy="no-referrer-when-downgrade"
                       title={`Map showing location of ${business.name}`}
+                      className="animate-fadeIn"
                     />
                   </div>
 

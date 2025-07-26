@@ -17,8 +17,14 @@ export default function HeroImageComponent({
   const [imgLoaded, setImgLoaded] = useState(false);
   const [imgError, setImgError] = useState(false);
 
-  // Use placeholder if image fails to load or while converting
-  const currentImage = imgError ? image : image;
+  // Fallback to a default image on error
+  const fallbackImage = {
+    ...image,
+    src: 'https://images.unsplash.com/photo-1602085674869-7d5df48d7c83?w=1920&h=1080&fit=crop&q=80',
+    webpSrc: 'https://images.unsplash.com/photo-1602085674869-7d5df48d7c83?w=1920&h=1080&fit=crop&q=80'
+  };
+  
+  const currentImage = imgError ? fallbackImage : image;
 
   return (
     <picture className={`relative ${className}`}>
