@@ -24,7 +24,7 @@ export default function Header() {
           {/* Logo */}
           <Link to="/" className="flex flex-col items-start">
             <span className="text-2xl font-bold text-brand leading-tight">Small Town Vibes</span>
-            <span className="text-xs text-muted-foreground -mt-1">Exit 182</span>
+            <span className="text-sm font-medium text-accent tracking-wider -mt-1">EXIT 182</span>
           </Link>
 
           {/* Desktop Navigation */}

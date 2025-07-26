@@ -14,6 +14,12 @@ export default function BusinessesPage() {
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
   const [showFilters, setShowFilters] = useState(false);
   const [showOpenOnly, setShowOpenOnly] = useState(false);
+  
+  // Update selectedCategory when URL changes
+  useEffect(() => {
+    const newCategory = searchParams.get('category') || 'all';
+    setSelectedCategory(newCategory);
+  }, [searchParams]);
 
   // Check if business is currently open
   const isBusinessOpen = (business: typeof businesses[0]) => {
