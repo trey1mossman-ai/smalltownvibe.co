@@ -1,10 +1,11 @@
-import { Link, NavLink } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
 import clsx from 'clsx';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
 
   const navLinks = [
     { to: '/', label: 'Home' },
@@ -30,33 +31,29 @@ export default function Header() {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
-              <NavLink
+              <Link
                 key={link.to}
                 to={link.to}
-                className={({ isActive }) =>
-                  clsx(
-                    'text-sm font-medium transition-colors hover:text-brand',
-                    isActive ? 'text-brand' : 'text-foreground'
-                  )
-                }
+                className={clsx(
+                  'text-sm font-medium transition-colors hover:text-brand',
+                  location.pathname === link.to ? 'text-brand' : 'text-foreground'
+                )}
               >
                 {link.label}
-              </NavLink>
+              </Link>
             ))}
             <div className="h-4 w-px bg-border" />
             {categories.map((link) => (
-              <NavLink
+              <Link
                 key={link.to}
                 to={link.to}
-                className={({ isActive }) =>
-                  clsx(
-                    'text-sm font-medium transition-colors hover:text-brand',
-                    isActive ? 'text-brand' : 'text-muted-foreground'
-                  )
-                }
+                className={clsx(
+                  'text-sm font-medium transition-colors hover:text-brand',
+                  location.pathname + location.search === link.to ? 'text-brand' : 'text-muted-foreground'
+                )}
               >
                 {link.label}
-              </NavLink>
+              </Link>
             ))}
           </div>
 
@@ -75,35 +72,31 @@ export default function Header() {
           <div className="md:hidden py-4 border-t border-border">
             <div className="flex flex-col space-y-4">
               {navLinks.map((link) => (
-                <NavLink
+                <Link
                   key={link.to}
                   to={link.to}
                   onClick={() => setIsMenuOpen(false)}
-                  className={({ isActive }) =>
-                    clsx(
-                      'text-sm font-medium transition-colors hover:text-brand',
-                      isActive ? 'text-brand' : 'text-foreground'
-                    )
-                  }
+                  className={clsx(
+                    'text-sm font-medium transition-colors hover:text-brand',
+                    location.pathname === link.to ? 'text-brand' : 'text-foreground'
+                  )}
                 >
                   {link.label}
-                </NavLink>
+                </Link>
               ))}
               <div className="h-px bg-border" />
               {categories.map((link) => (
-                <NavLink
+                <Link
                   key={link.to}
                   to={link.to}
                   onClick={() => setIsMenuOpen(false)}
-                  className={({ isActive }) =>
-                    clsx(
-                      'text-sm font-medium transition-colors hover:text-brand',
-                      isActive ? 'text-brand' : 'text-muted-foreground'
-                    )
-                  }
+                  className={clsx(
+                    'text-sm font-medium transition-colors hover:text-brand',
+                    location.pathname + location.search === link.to ? 'text-brand' : 'text-muted-foreground'
+                  )}
                 >
                   {link.label}
-                </NavLink>
+                </Link>
               ))}
             </div>
           </div>
